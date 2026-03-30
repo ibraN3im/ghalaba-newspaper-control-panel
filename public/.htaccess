@@ -1,0 +1,17 @@
+<IfModule mod_headers.c>
+    # Proper MIME types for JavaScript modules
+    <Files "*.js">
+        Header set Content-Type "application/javascript; charset=utf-8"
+    </Files>
+    <Files "*.mjs">
+        Header set Content-Type "application/javascript; charset=utf-8"
+    </Files>
+    
+    # Cache control for assets
+    <FilesMatch "\.(js|mjs|css)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+# Fallback for SPA routing
+FallbackResource /index.html

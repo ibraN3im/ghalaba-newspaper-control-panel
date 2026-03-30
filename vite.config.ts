@@ -15,6 +15,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         format: 'es',
+        entryFileNames: '[name].js',
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[ext]',
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router']
@@ -22,5 +25,8 @@ export default defineConfig({
       }
     }
   },
-  base: '/'
+  base: '/',
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+  }
 })
