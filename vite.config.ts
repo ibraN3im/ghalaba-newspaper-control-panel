@@ -3,30 +3,15 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  base: '/',
   plugins: [react(), tailwindcss()],
   server: {
     port: 3009,
     host: true
   },
   build: {
-    target: 'esnext',
-    minify: 'esbuild',
+    outDir: 'dist',
     sourcemap: false,
-    rollupOptions: {
-      output: {
-        format: 'es',
-        entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
-        assetFileNames: '[name].[ext]',
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router']
-        }
-      }
-    }
-  },
-  base: '/',
-  define: {
-    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+    minify: 'esbuild'
   }
 })
