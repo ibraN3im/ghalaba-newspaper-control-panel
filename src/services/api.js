@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://alqalaba-back-end.onrender.com/api';
 
 class ApiService {
     constructor() {

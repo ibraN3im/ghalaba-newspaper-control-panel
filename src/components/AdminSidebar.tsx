@@ -7,7 +7,6 @@ import {
   Users,
   Settings,
   LogOut,
-  Home,
 } from "lucide-react";
 
 export function AdminSidebar() {
@@ -56,8 +55,8 @@ export function AdminSidebar() {
             <span className="text-white font-bold">غ</span>
           </div>
           <div className="min-w-0">
-            <h2 className="font-bold text-sm md:text-base truncate">{t("لوحة التحكم", "Admin Panel")}</h2>
-            <p className="text-xs md:text-sm text-gray-400 truncate">{user?.name}</p>
+            <h2 className="font-bold text-sm md:text-base truncate">لوحة التحكم</h2>
+            <p className="text-xs md:text-sm text-blue-400 truncate pt-2"><span className="text-white">مدير:</span> {user?.name}</p>
           </div>
         </div>
       </div>
@@ -94,8 +93,8 @@ export function AdminSidebar() {
           onClick={logout}
           className="w-full flex items-center gap-3 px-3 md:px-4 py-2 md:py-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors whitespace-nowrap"
         >
-          <LogOut className="w-5 h-5 flex-shrink-0" />
-          <span className="text-sm md:text-base">{t("تسجيل الخروج", "Logout")}</span>
+          <LogOut className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+          <span className="text-sm md:text-base">تسجيل الخروج</span>
         </button>
       </div>
     </aside>
